@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyTech — Full-Stack Development Studio</title>
+  <meta name="description" content="PyTech è uno studio di sviluppo web full-stack con sede a Pordenone, specializzato in piattaforme digitali per il mondo dell'arte e della fotografia." />
+  <meta property="og:title" content="PyTech — Full-Stack Development Studio" />
+  <meta property="og:description" content="Costruiamo esperienze digitali moderne per il settore artistico e fotografico." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== CUSTOM CURSOR ===== -->
+<div id="cursor-outer"></div>
+<div id="cursor-inner"></div>
+<div id="cursor-trail"></div>
+
+<!-- ===== PAGE LOADER ===== -->
+<div id="loader">
+  <div class="loader-inner">
+    <span>P</span><span>y</span><span>T</span><span>e</span><span>c</span><span>h</span>
+  </div>
+</div>
+
+<!-- ===== SCROLL PROGRESS ===== -->
+<div id="scroll-progress"></div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Py<span>Tech</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">Chi Siamo</a></li>
+    <li><a href="#services">Servizi</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="mailto:gabriele.rossi@pytech.dev" class="nav-cta">Contattaci</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:0.8rem;">
+    <button class="theme-toggle" id="themeToggle" title="Cambia tema" aria-label="Cambia tema">
+      <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-label">Full-Stack Development Studio</div>
+    <h1>Costruiamo il <span class="accent">Digitale</span> del Futuro</h1>
+    <p>PyTech è uno studio full-stack di Pordenone specializzato nello sviluppo di piattaforme web moderne per il mondo dell'arte e della fotografia. Dal concept al deploy.</p>
+    <div class="hero-btns">
+      <a href="#portfolio" class="btn-primary"><i class="fa-solid fa-arrow-right"></i> Vedi i Lavori</a>
+      <a href="#contact" class="btn-outline"><i class="fa-solid fa-envelope"></i> Scrivici</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="code-block">
+      <div class="scanline"></div>
+      <div class="code-dots"><span></span><span></span><span></span></div>
+      <div class="code-line"><span class="c-cm"># πTech/main.py</span></div>
+      <div class="code-line">&nbsp;</div>
+      <div class="code-line"><span class="c-kw">from</span> <span class="c-fn">django</span> <span class="c-kw">import</span> <span class="c-txt">setup</span></div>
+      <div class="code-line"><span class="c-kw">from</span> <span class="c-fn">art</span> <span class="c-kw">import</span> <span class="c-txt">Exhibition</span></div>
+      <div class="code-line">&nbsp;</div>
+      <div class="code-line"><span class="c-kw">class</span> <span class="c-fn">PyTech</span><span class="c-txt">:</span></div>
+      <div class="code-line">&nbsp;&nbsp;<span class="c-fn">name</span> <span class="c-txt">= </span><span class="c-str">"πTech Studio"</span></div>
+      <div class="code-line">&nbsp;&nbsp;<span class="c-fn">team</span> <span class="c-txt">= </span><span class="c-num">4</span> <span class="c-cm"># devs</span></div>
+      <div class="code-line">&nbsp;</div>
+      <div class="code-line">&nbsp;&nbsp;<span class="c-kw">def</span> <span class="c-fn">build</span><span class="c-txt">(</span><span class="c-fn">self</span><span class="c-txt">, idea):</span></div>
+      <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">return</span> <span class="c-fn">Exhibition</span><span class="c-txt">(</span></div>
+      <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-fn">frontend</span><span class="c-txt">=</span><span class="c-str">"React"</span><span class="c-txt">,</span></div>
+      <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-fn">backend</span><span class="c-txt">=</span><span class="c-str">"Django"</span><span class="c-txt">,</span></div>
+      <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-fn">passion</span><span class="c-txt">=</span><span class="c-num">True</span></div>
+      <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-txt">)</span></div>
+      <div class="code-line">&nbsp;</div>
+      <!-- Typewriter last line -->
+      <div class="code-line">
+        <span class="c-txt" id="typed-line"></span><span class="cursor-code"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="about">
+  <div class="section-label">Chi Siamo</div>
+  <h2 class="section-title">Tecnologia e Arte,<br />in un unico Studio</h2>
+  <div class="about-grid">
+    <div>
+      <p class="section-sub">
+        Siamo PyTech, un team di quattro sviluppatori full-stack con sede a Pordenone, uniti dalla passione per il codice pulito e per l'esperienza utente. Il nostro focus è creare piattaforme digitali che emozionano — soprattutto per il mondo dell'arte e della fotografia.
+      </p>
+      <p style="font-size:1rem; color:var(--text-muted); line-height:1.8; margin-top:1.5rem;">
+        Gestiamo l'intero ciclo di sviluppo: dall'analisi dei requisiti al deploy in produzione, con un approccio agile e orientato ai risultati. Ogni progetto è costruito con architetture scalabili e un'attenzione maniacale ai dettagli.
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card reveal">
+        <div class="stat-num" data-count="4">4</div>
+        <div class="stat-label">Sviluppatori</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-num" data-count="1">1</div>
+        <div class="stat-label">Progetto Live</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-num" data-count="5">5+</div>
+        <div class="stat-label">Tecnologie</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Passione</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="section-label">Cosa Facciamo</div>
+  <h2 class="section-title">Servizi</h2>
+  <p class="section-sub">Dal singolo componente all'architettura enterprise: costruiamo tutto ciò di cui hai bisogno.</p>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+      <h3>Front-End Development</h3>
+      <p>Interfacce moderne, accessibili e perfettamente responsive. Utilizziamo React e tecniche CSS avanzate per esperienze utente eccezionali su qualsiasi dispositivo.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon"><i class="fa-solid fa-server"></i></div>
+      <h3>Back-End & API</h3>
+      <p>Architetture robuste con Python/Django e Flask. Progettiamo API RESTful sicure, scalabili e ben documentate, pronte per qualsiasi tipo di integrazione.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+      <h3>Database Design</h3>
+      <p>Progettazione e ottimizzazione di database relazionali (PostgreSQL, MySQL) e non relazionali. Schema design, query optimization e gestione delle migrazioni.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+      <h3>SEO & Performance</h3>
+      <p>Ottimizzazione tecnica per i motori di ricerca: meta tag, struttura semantica, Core Web Vitals, lazy loading e ottimizzazione delle immagini (WebP).</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+      <h3>Newsletter & CRM</h3>
+      <p>Sistemi integrati di email marketing: form di iscrizione, gestione liste, template personalizzati e automazioni per tenere in contatto i tuoi utenti.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+      <h3>Manutenzione & Supporto</h3>
+      <p>Monitoraggio continuo, aggiornamenti di sicurezza, backup automatici e assistenza tecnica post-lancio. Il tuo sito è sempre al sicuro e aggiornato.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== TECH STACK ===== -->
+<section id="techstack" class="techstack">
+  <div class="section-label">Il Nostro Stack</div>
+  <h2 class="section-title">Tecnologie</h2>
+  <p class="section-sub">Strumenti scelti con cura per ogni livello dell'architettura.</p>
+  <div class="tech-grid">
+    <div class="tech-pill reveal"><i class="fa-brands fa-python"></i> Python</div>
+    <div class="tech-pill reveal reveal-delay-1"><i class="fa-brands fa-js"></i> JavaScript</div>
+    <div class="tech-pill reveal reveal-delay-2"><i class="fa-brands fa-react"></i> React</div>
+    <div class="tech-pill reveal reveal-delay-3"><i class="fa-brands fa-html5"></i> HTML5</div>
+    <div class="tech-pill reveal reveal-delay-1"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+    <div class="tech-pill reveal reveal-delay-2"><i class="fa-solid fa-leaf"></i> Django</div>
+    <div class="tech-pill reveal reveal-delay-3"><i class="fa-solid fa-flask"></i> Flask</div>
+    <div class="tech-pill reveal"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+    <div class="tech-pill reveal reveal-delay-1"><i class="fa-solid fa-database"></i> MySQL</div>
+    <div class="tech-pill reveal reveal-delay-2"><i class="fa-brands fa-git-alt"></i> Git</div>
+    <div class="tech-pill reveal reveal-delay-3"><i class="fa-brands fa-github"></i> GitHub</div>
+    <div class="tech-pill reveal"><i class="fa-brands fa-docker"></i> Docker</div>
+    <div class="tech-pill reveal reveal-delay-1"><i class="fa-brands fa-linux"></i> Linux</div>
+    <div class="tech-pill reveal reveal-delay-2"><i class="fa-solid fa-code"></i> REST API</div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== PORTFOLIO ===== -->
+<section id="portfolio">
+  <div class="section-label">I Nostri Lavori</div>
+  <h2 class="section-title">Portfolio</h2>
+  <p class="section-sub">Progetti reali, costruiti con tecnologie moderne e attenzione ai dettagli.</p>
+  <div class="portfolio-grid">
+    <div class="project-card reveal">
+      <img src="assets/media/kiss.jpg" alt="Mostra Robert Doisneau — The Kiss" class="project-img" />
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">React</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Newsletter</span>
+        </div>
+        <h3>Mostra Robert Doisneau</h3>
+        <p>Piattaforma digitale full-stack per la mostra fotografica di Robert Doisneau. Include sistema di newsletter integrato, gestione eventi, galleria fotografica ottimizzata e pannello di amministrazione personalizzato.</p>
+      </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-1">
+      <div class="project-placeholder">
+        <i class="fa-solid fa-code" style="opacity:0.25;"></i>
+        Coming Soon
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="tag">In Sviluppo</span>
+        </div>
+        <h3>Prossimo Progetto</h3>
+        <p>Nuovi lavori in arrivo. Hai un'idea o un progetto da realizzare? Contattaci e costruiamolo insieme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== TEAM ===== -->
+<section id="team" class="team">
+  <div class="section-label">Il Team</div>
+  <h2 class="section-title">Chi c'è Dietro PyTech</h2>
+  <p class="section-sub">Quattro sviluppatori, una visione comune: costruire il web del futuro.</p>
+  <div class="team-grid">
+
+    <div class="member-card reveal">
+      <div class="avatar">
+        <img src="assets/devs/gabriele.png" alt="Gabriele Rossi" />
+      </div>
+      <h3>Gabriele Rossi</h3>
+      <div class="member-role">Project Manager</div>
+      <div class="member-school">ITST Kennedy · Maniago</div>
+      <ul class="member-meta">
+        <li><i class="fa-solid fa-cake-candles"></i> 19 anni</li>
+        <li><i class="fa-solid fa-location-dot"></i> Maniago, PN</li>
+      </ul>
+      <p class="member-badge">"Curioso e creativo"</p>
+      <a href="mailto:gabriele.rossi@pytech.dev" class="member-btn"><i class="fa-solid fa-envelope"></i> Contatta</a>
+    </div>
+
+    <div class="member-card reveal reveal-delay-1">
+      <div class="avatar">
+        <img src="assets/devs/navpreet.jpg" alt="Navpreet Singh" />
+      </div>
+      <h3>Navpreet Singh</h3>
+      <div class="member-role">Database Architect</div>
+      <div class="member-school">ITIS A. Scarpa · Brugnera</div>
+      <ul class="member-meta">
+        <li><i class="fa-solid fa-cake-candles"></i> 20 anni</li>
+        <li><i class="fa-solid fa-location-dot"></i> Brugnera, PN</li>
+      </ul>
+      <p class="member-badge">"Organizzato e preciso"</p>
+      <a href="mailto:navpreet.singh@pytech.dev" class="member-btn"><i class="fa-solid fa-envelope"></i> Contatta</a>
+    </div>
+
+    <div class="member-card reveal reveal-delay-2">
+      <div class="avatar">
+        <img src="assets/devs/" alt="Ruben Ranghiuc" />
+      </div>
+      <h3>Ruben Ranghiuc</h3>
+      <div class="member-role">Front-End Lead</div>
+      <div class="member-school">ITIS A. Scarpa · Motta di Livenza</div>
+      <ul class="member-meta">
+        <li><i class="fa-solid fa-cake-candles"></i> 19 anni</li>
+        <li><i class="fa-solid fa-location-dot"></i> Motta di Livenza, TV</li>
+      </ul>
+      <p class="member-badge">"Perfezionista e determinato"</p>
+      <a href="mailto:ruben.ranghiuc@pytech.dev" class="member-btn"><i class="fa-solid fa-envelope"></i> Contatta</a>
+    </div>
+
+    <div class="member-card reveal reveal-delay-3">
+      <div class="avatar">
+        <img src="assets/devs/lorenzo.png" alt="Lorenzo Veneruzzo" />
+      </div>
+      <h3>Lorenzo Veneruzzo</h3>
+      <div class="member-role">Back-End Lead</div>
+      <div class="member-school">ITIS A. Scarpa · Motta di Livenza</div>
+      <ul class="member-meta">
+        <li><i class="fa-solid fa-cake-candles"></i> 19 anni</li>
+        <li><i class="fa-solid fa-location-dot"></i> Motta di Livenza, TV</li>
+      </ul>
+      <p class="member-badge">"Disponibile ed empatico"</p>
+      <a href="mailto:lorenzo.veneruzzo@pytech.dev" class="member-btn"><i class="fa-solid fa-envelope"></i> Contatta</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="contact">
+    <div class="contact-info">
+      <div class="section-label">Lavoriamo Insieme</div>
+      <h2 class="section-title">Parliamoci</h2>
+      <p class="section-sub">Hai un progetto in mente? Una domanda? Compila il form e ti risponderemo entro 24 ore.</p>
+      <ul class="contact-list">
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:gabriele.rossi@pytech.dev">gabriele.rossi@pytech.dev</a>
+        </li>
+        <li><i class="fa-solid fa-code-branch"></i>Disponibili per collaborazioni e stage</li>
+        <li><i class="fa-solid fa-earth-europe"></i>Pordenone, Friuli-Venezia Giulia — Remoto</li>
+      </ul>
+    </div>
+
+    <div class="form-card reveal" id="formCard">
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group" id="group-name">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Mario Rossi" autocomplete="name" />
+            <div class="error-msg">Inserisci il tuo nome.</div>
+          </div>
+          <div class="form-group" id="group-email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="mario@esempio.it" autocomplete="email" />
+            <div class="error-msg">Inserisci un'email valida.</div>
+          </div>
+        </div>
+        <div class="form-group" id="group-subject">
+          <label for="subject">Oggetto</label>
+          <select id="subject" name="subject">
+            <option value="">Seleziona un argomento</option>
+            <option value="progetto">Nuovo Progetto</option>
+            <option value="consulenza">Consulenza Tecnica</option>
+            <option value="collaborazione">Collaborazione</option>
+            <option value="altro">Altro</option>
+          </select>
+          <div class="error-msg">Seleziona un argomento.</div>
+        </div>
+        <div class="form-group" id="group-message">
+          <label for="message">Messaggio</label>
+          <textarea id="message" name="message" placeholder="Raccontaci del tuo progetto..."></textarea>
+          <div class="error-msg">Scrivi almeno 20 caratteri.</div>
+        </div>
+        <button type="submit" class="form-submit">
+          <i class="fa-solid fa-paper-plane"></i> Invia Messaggio
+        </button>
+      </form>
+      <div class="form-success" id="formSuccess" style="display:none;">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Messaggio Inviato!</h3>
+        <p>Grazie per averci contattato. Ti risponderemo entro 24 ore.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-brand">Py<span>Tech</span></div>
+  <div class="footer-copy">&copy; 2026 PyTech — Tutti i diritti riservati</div>
+  <div class="footer-links">
+    <a href="#about">Chi Siamo</a>
+    <a href="#services">Servizi</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contatti</a>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script src="script.js"></script>
+</body>
+</html>
