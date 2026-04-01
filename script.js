@@ -366,3 +366,34 @@
   }
 
 })();
+
+/* ============================================================
+   16. COOKIE BANNER
+============================================================ */
+(function() {
+  const banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+
+  const STORAGE_KEY = 'PyTech-cookie-consent';
+
+  // Se l'utente ha già scelto, non mostrare nulla
+  if (localStorage.getItem(STORAGE_KEY)) return;
+
+  // Mostra il banner dopo un piccolo delay (aspetta il loader)
+  setTimeout(() => banner.classList.add('show'), 2400);
+
+  function dismiss() {
+    banner.classList.remove('show');
+    banner.classList.add('hide');
+  }
+
+  document.getElementById('cookie-accept').addEventListener('click', () => {
+    localStorage.setItem(STORAGE_KEY, 'accepted');
+    dismiss();
+  });
+
+  document.getElementById('cookie-decline').addEventListener('click', () => {
+    localStorage.setItem(STORAGE_KEY, 'declined');
+    dismiss();
+  });
+})();
