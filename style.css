@@ -108,6 +108,11 @@ body {
   opacity: 0.5;
   transition: transform 0.25s ease;
 }
+@media (max-width: 768px), (pointer: coarse) {
+  #cursor-outer, #cursor-inner, #cursor-trail {
+    display: none !important;
+  }
+}
 body.cursor-hover #cursor-outer {
   width: 56px;
   height: 56px;
